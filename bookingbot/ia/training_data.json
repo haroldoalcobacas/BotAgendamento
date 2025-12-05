@@ -1,0 +1,62 @@
+[
+  { "text": "Quero reservar uma sala de ensaio amanhã às 14h", "label": "criar_reserva" },
+  { "text": "Preciso agendar o estúdio grande para sábado à noite", "label": "criar_reserva" },
+  { "text": "Agendar sala de gravação hoje às 19h", "label": "criar_reserva" },
+  { "text": "Quero marcar um horário para ensaiar com minha banda", "label": "criar_reserva" },
+  { "text": "Reservar sala de música às 10 da manhã", "label": "criar_reserva" },
+  { "text": "Fazer reserva para o estúdio B", "label": "criar_reserva" },
+  { "text": "Agende para sexta às 19h", "label": "criar_reserva" },
+
+  { "text": "Remova a reserva do dia 22", "label": "cancelar_reserva" },
+  { "text": "Quais horários estão disponíveis hoje?", "label": "consultar_disponibilidade" },
+  { "text": "A sala A está livre agora?", "label": "consultar_disponibilidade" },
+  { "text": "Quero saber os horários vagos para amanhã", "label": "consultar_disponibilidade" },
+  { "text": "Tem sala de ensaio disponível hoje à tarde?", "label": "consultar_disponibilidade" },
+  { "text": "Quais estúdios estão livres no domingo?", "label": "consultar_disponibilidade" },
+  { "text": "Tem horário aberto por volta das 18h?", "label": "consultar_disponibilidade" },
+
+  { "text": "Quero cancelar minha reserva", "label": "cancelar_reserva" },
+  { "text": "Cancelar agendamento de hoje às 21h", "label": "cancelar_reserva" },
+  { "text": "Preciso cancelar a sala de ensaio que marquei", "label": "cancelar_reserva" },
+  { "text": "Desmarcar minha reserva da sala B", "label": "cancelar_reserva" },
+  { "text": "Pode remover meu agendamento?", "label": "cancelar_reserva" },
+
+  { "text": "Quero remarcar minha reserva", "label": "reagendar_reserva" },
+  { "text": "Preciso alterar o horário da minha reserva", "label": "reagendar_reserva" },
+  { "text": "Posso mudar o agendamento de 15h para 17h?", "label": "reagendar_reserva" },
+  { "text": "Trocar meu horário para amanhã", "label": "reagendar_reserva" },
+
+  { "text": "Quanto custa alugar uma sala de ensaio?", "label": "informar_precos" },
+  { "text": "Quais são os valores do estúdio?", "label": "informar_precos" },
+  { "text": "Preço da sala grande", "label": "informar_precos" },
+  { "text": "Quanto é a hora do estúdio de gravação?", "label": "informar_precos" },
+
+  { "text": "Vocês alugam instrumentos?", "label": "alugar_equipamentos" },
+  { "text": "Tem bateria para locação?", "label": "alugar_equipamentos" },
+  { "text": "Dá para alugar amplificador de guitarra?", "label": "alugar_equipamentos" },
+  { "text": "Quais equipamentos estão disponíveis?", "label": "alugar_equipamentos" },
+  { "text": "Posso reservar microfones também?", "label": "alugar_equipamentos" },
+
+  { "text": "Onde fica o estúdio?", "label": "informar_localizacao" },
+  { "text": "Qual o endereço do estúdio?", "label": "informar_localizacao" },
+  { "text": "Como faço para chegar até vocês?", "label": "informar_localizacao" },
+
+  { "text": "Quais são os horários de funcionamento?", "label": "informar_horario_funcionamento" },
+  { "text": "Vocês abrem aos domingos?", "label": "informar_horario_funcionamento" },
+  { "text": "O estúdio funciona até que horas?", "label": "informar_horario_funcionamento" },
+
+  { "text": "Oi", "label": "saudacao" },
+  { "text": "Olá", "label": "saudacao" },
+  { "text": "Boa tarde", "label": "saudacao" },
+  { "text": "E aí tudo bem?", "label": "saudacao" },
+
+  { "text": "Preciso de ajuda", "label": "ajuda" },
+  { "text": "Como funciona o sistema?", "label": "ajuda" },
+  { "text": "Me explique como reservar uma sala", "label": "ajuda" },
+  { "text": "O que você pode fazer?", "label": "ajuda" },
+
+  { "text": "Quero saber da minha reserva", "label": "consultar_minhas_reservas" },
+  { "text": "Listar minhas reservas", "label": "consultar_minhas_reservas" },
+  { "text": "Tenho alguma reserva marcada?", "label": "consultar_minhas_reservas" },
+  { "text": "Quais reservas eu fiz?", "label": "consultar_minhas_reservas" }
+]

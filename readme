@@ -1,0 +1,122 @@
+# 🤖 BootAgendamento: Bot de Reservas de Estúdio via WhatsApp
+
+> Sistema automatizado para gerenciar a agenda de um estúdio de ensaio/gravação diretamente pelo WhatsApp, utilizando o framework Django e Processamento de Linguagem Natural (NLP) para interpretar pedidos dos clientes.
+
+---
+
+## 🎯 Objetivo do Projeto
+
+O **BootAgendamento** visa automatizar o processo de agendamento de estúdios e salas, eliminando a necessidade de atendimento manual via telefone ou e-mail. Ele oferece uma solução de agenda robusta e integrada, garantindo que não haja conflitos de horário entre os múltiplos recursos (salas) do estúdio.
+
+## ✨ Funcionalidades Chave
+
+* **Comunicação WhatsApp:** Recebe mensagens via webhook e envia respostas formatadas diretamente para o cliente.
+* **NLP Robusto:** Utiliza um classificador de intenção (Scikit-learn/TF-IDF) para identificar o objetivo da mensagem (Reservar, Cancelar, Consultar).
+* **Extração de Entidades:** Extrai com precisão a **Data**, o **Horário**, a **Duração** e o **Recurso (Sala)** desejado pelo cliente, mesmo em linguagem natural ("reservar a Sala A amanhã por 90 minutos").
+* **Gestão de Múltiplos Recursos:** O modelo `Resource` permite gerenciar a disponibilidade de várias salas simultaneamente.
+* **Verificação de Conflito:** Implementa lógica de conflito de horários (overlapping time intervals) filtrada por recurso, garantindo a integridade da agenda.
+* **Painel Admin Completo:** Oferece interface de administração via Django Admin para gerenciar clientes, recursos e visualizar o histórico de reservas.
+
+---
+
+## 🏗️ Stack Tecnológica
+
+| Categoria | Tecnologia | Uso no Projeto |
+| :--- | :--- | :--- |
+| **Backend/API** | **Python** e **Django** | Base do sistema de reservas e manipulação de dados. |
+| **NLP/IA** | **Scikit-learn** (Classificação) / **Python Dateutil** (Extração) | Processamento da linguagem natural e extração de dados temporais. |
+| **Banco de Dados** | **SQLite** (Dev) / **PostgreSQL** (Prod) | Armazenamento de clientes, recursos e registros de reservas. |
+| **API** | **Django REST Framework (DRF)** | Criação do endpoint `/webhook/` e da API de gestão (`/api/bookings/`). |
+| **Mensageria** | **`requests`** e **Variáveis de Ambiente** | Serviço genérico para integração com APIs de WhatsApp (Meta Cloud, Z-API, etc.). |
+
+---
+
+## 🚀 Guia de Configuração e Execução Local
+
+### Pré-requisitos
+
+* Python 3.10+
+* pip (gerenciador de pacotes)
+
+### 1. Preparação
+
+```bash
+# 1. Clonar o repositório
+git clone [https://github.com/SeuUsuario/BootAgendamento.git](https://github.com/SeuUsuario/BootAgendamento.git)
+cd BootAgendamento
+
+# 2. Criar e ativar o ambiente virtual
+python -m venv venv
+source venv/bin/activate  # Windows: .\venv\Scripts\activate
+
+# 3. Instalar dependências
+pip install -r requirements.txt
+
+
+
+# Configuração de Ambiente
+Crie o arquivo .env no diretório raiz para armazenar variáveis de ambiente sensíveis (Lembre-se: este arquivo é ignorado pelo Git).
+
+Snippet de código
+
+# Configurações Essenciais do Django
+DEBUG=True
+DJANGO_SECRET_KEY='sua_chave_secreta_deve_ser_unica'
+ALLOWED_HOSTS=localhost,127.0.0.1,seusite.com
+
+# Banco de Dados (SQLite padrão)
+# DATABASE_URL=sqlite:///db.sqlite3 
+
+# Configurações da API de WhatsApp
+WHATSAPP_API_URL='URL_DO_SEU_GATEWAY_DE_WHATSAPP' 
+WHATSAPP_API_TOKEN='TOKEN_DE_AUTENTICACAO_DO_SEU_GATEWAY'
+
+
+#Banco de Dados e Usuário Admin
+Recrie a estrutura do banco de dados e crie o usuário de administração.
+
+# 1. Criar e aplicar migrações
+python manage.py makemigrations bookingbot
+python manage.py migrate
+
+# 2. Criar superusuário (Admin)
+python manage.py createsuperuser
+
+
+# Treinamento do Modelo de NLP
+Treine o classificador de intenção com o dataset incluso:
+
+python bookingbot/ia/train_model.py
+
+# Executar e Popular Dados
+
+
+python manage.py runserver
+
+Acesse http://127.0.0.1:8000/admin/ (com o superusuário criado).
+
+Vá em "Resources" e cadastre suas salas de estúdio (Ex: Sala A, Estúdio Grande).
+
+O bot está agora pronto para receber webhooks no endpoint: http://127.0.0.1:8000/webhook/.
+
+
+📞 Endpoints Chave
+Endpoint,Método,Função
+/webhook/,POST,Recebe e processa as mensagens do WhatsApp. Este é o URL que deve ser configurado no seu provedor de API.
+/admin/,GET,"Painel de controle para gestão de agendas, clientes e recursos."
+/api/bookings/,"GET, POST",API REST para administração e integração externa de reservas.
+
+🤝 Contribuição
+Contribuições são bem-vindas! Sinta-se à vontade para:
+
+Abrir uma Issue para reportar bugs ou sugerir funcionalidades.
+
+Criar um Fork e enviar um Pull Request com melhorias no código.
+
+👤 Autor
+Haroldo Alcobaças
+
+[haroldo.alacobacas]
+
+📜 Licença
+Este projeto está sob a licença MIT.

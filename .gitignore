@@ -1,0 +1,41 @@
+# ----------------------------------------------------------------------
+# Arquivos e Pastas Geradas pelo Python
+# ----------------------------------------------------------------------
+__pycache__/
+*.pyc
+*~$
+*.sublime-project
+*.sublime-workspace
+.pytest_cache/
+.vscode/
+
+# Ambientes Virtuais
+venv/
+env/
+.env/
+
+# ----------------------------------------------------------------------
+# Django
+# ----------------------------------------------------------------------
+
+db.sqlite3
+*/migrations/000*_*.py
+/media/
+/staticfiles/
+*.log
+
+# ----------------------------------------------------------------------
+# Configurações de Segurança e Ambiente (MUITO IMPORTANTES)
+# ----------------------------------------------------------------------
+
+.env
+.flaskenv
+client_secret.json
+credentials.json
+
+# ----------------------------------------------------------------------
+# Ferramentas de CI/CD e Containerização
+# ----------------------------------------------------------------------
+
+.dockerignore
+.DS_Store
